@@ -1,5 +1,9 @@
 # preact-stockroom-example
 
+- [stockroom](https://github.com/developit/stockroom)
+- [unistore](https://github.com/developit/unistore)
+- [preact](https://github.com/developit/preact)
+
 ## CLI Commands
 
 ``` bash
