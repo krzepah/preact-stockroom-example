@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "foo",
+  "name": "preact-stockroom-example",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
