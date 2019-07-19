@@ -1,4 +1,4 @@
-# foo
+# preact-stockroom-example
 
 ## CLI Commands
 
