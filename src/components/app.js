@@ -1,5 +1,11 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
+import { Provider, connect } from 'unistore/preact'
+import createStore from 'unistore';
+
+let store = createStore({
+    count: 1
+})
 
 import Header from './header';
 
@@ -19,14 +25,16 @@ export default class App extends Component {
 
 	render() {
 		return (
-			<div id="app">
-				<Header />
-				<Router onChange={this.handleRoute}>
-					<Home path="/" />
-					<Profile path="/profile/" user="me" />
-					<Profile path="/profile/:user" />
-				</Router>
-			</div>
+            <Provider store={store}>
+                <div id="app">
+                    <Header />
+                    <Router onChange={this.handleRoute}>
+                        <Home path="/" />
+                        <Profile path="/profile/" user="me" />
+                        <Profile path="/profile/:user" />
+                    </Router>
+                </div>
+            </Provider>
 		);
 	}
 }

@@ -1,10 +1,4 @@
 
-import createStore from 'stockroom'
-import StoreWorker from 'worker-loader!./worker'
-
-let store = createStore(new StoreWorker())
-
-let increment = store.action('increment')
-store.subscribe(console.log)
+import createStore from 'unistore'
 
 export default store;
