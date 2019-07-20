@@ -7,6 +7,10 @@ import Header from './header';
 import Home from '../routes/home';
 import Profile from '../routes/profile';
 
+import { Provider } from 'unistore/preact';
+
+import store from '../store';
+
 export default class App extends Component {
 	
 	/** Gets fired when the route changes.
@@ -18,15 +22,17 @@ export default class App extends Component {
 	};
 
 	render() {
-		return (
-			<div id="app">
-				<Header />
-				<Router onChange={this.handleRoute}>
-					<Home path="/" />
-					<Profile path="/profile/" user="me" />
-					<Profile path="/profile/:user" />
-				</Router>
-			</div>
+        return (
+            <Provider store={store}>
+                <div id="app">
+                    <Header />
+                    <Router onChange={this.handleRoute}>
+                        <Home path="/" />
+                        <Profile path="/profile/" user="me" />
+                        <Profile path="/profile/:user" />
+                    </Router>
+                </div>
+            </Provider>
 		);
 	}
 }
