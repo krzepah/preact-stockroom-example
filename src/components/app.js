@@ -5,7 +5,8 @@ import Header from './header';
 
 // Code-splitting is automated for routes
 import Home from '../routes/home';
-import Profile from '../routes/profile';
+import Counter from '../routes/counter';
+import Vl from '../routes/vl';
 
 import { Provider } from 'unistore/preact';
 
@@ -28,8 +29,8 @@ export default class App extends Component {
                     <Header />
                     <Router onChange={this.handleRoute}>
                         <Home path="/" />
-                        <Profile path="/profile/" user="me" />
-                        <Profile path="/profile/:user" />
+                        <Counter path="/counter/"/>
+                        <Vl path="/vlist" />
                     </Router>
                 </div>
             </Provider>

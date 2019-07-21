@@ -5,10 +5,10 @@ import store from '../../store';
 import { increment } from '../../store';
 import { connect } from 'unistore/preact'
 
-const ProfileBase = ({user, count, increment}) => <div class={style.profile}>
+const CounterBase = ({count, increment}) => <div class={style.profile}>
     <br />
     <br />
-    Hello { user }
+    Hello
     <br />
     count is : { count }
     <br/>
@@ -16,13 +16,11 @@ const ProfileBase = ({user, count, increment}) => <div class={style.profile}>
     <button onClick={increment}>increment</button>
 </div>
 
-const Profile = connect(
+const Counter = connect(
     (state, props) => state,
     (state, props) => ({
-        increment: () => {
-            increment();
-        }
+        increment: 'increment'
     })
-)(ProfileBase)
+)(CounterBase)
 
-export default Profile;
+export default Counter;
